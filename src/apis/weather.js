@@ -8,7 +8,7 @@ export default axios.create({
     lang: "eng",
   },
   headers: {
-    "X-RapidAPI-Host": "community-open-weather-map.p.rapidapi.com",
-    "X-RapidAPI-Key": "9d56960b7bmsh1ab16e59ddd16f8p11c6a7jsn4f9accfaf47e",
+    "X-RapidAPI-Host": process.env.REACT_APP_WEATHER_API_HOST,
+    "X-RapidAPI-Key": process.env.REACT_APP_WEATHER_API_KEY,
   },
 });
