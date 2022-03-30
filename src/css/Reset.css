@@ -1,0 +1,15 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  /* font-size: 16px; */
+  color: var(--primary--color);
+}
+
+input,
+textarea {
+  background: 0 0;
+}
+
+p {
+  margin: 0px;
+}

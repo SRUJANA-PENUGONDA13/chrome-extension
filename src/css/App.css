@@ -1,0 +1,119 @@
+.main-container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+  color: var(--primary--color);
+  gap: 4rem;
+}
+
+.name-wrapper,
+.focus-wrapper {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--text--xlarge);
+}
+
+.name-input {
+  font-size: var(--text--large);
+}
+
+.continue-btn {
+  background-color: var(--primary--color);
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 12px;
+  padding: 6px;
+  font-size: var(--text--small);
+}
+
+.focus-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.weather {
+  margin: auto;
+  margin-right: 0px;
+  font-size: var(--text-medium);
+}
+
+.temperature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--text--large);
+}
+
+.temp-measure {
+  font-size: var(--text--small);
+}
+
+.weather-state {
+  text-align: right;
+  font-size: var(--text--small);
+}
+
+.weather-icon {
+  font-size: var(--text-medium);
+}
+
+.focus-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.time {
+  font-size: var(--text--xxxlarge);
+}
+
+.greeting {
+  font-size: var(--text--xlarge);
+}
+
+.focus-label {
+  font-size: var(--text--medium);
+}
+
+.focus-wrapper {
+  font-size: var(--text--small);
+  text-align: center;
+  gap: 1rem;
+}
+
+.focus-input {
+  font-size: var(--text--medium);
+}
+
+.focus-task {
+  margin-top: 2rem;
+}
+
+.focus-taskName {
+  padding: 1rem;
+  font-size: var(--text--medium);
+}
+
+.focus-checkbox {
+  font-size: var(--text--large);
+}
+
+.quote {
+  margin-top: 9rem;
+  font-size: var(--text--small);
+}
