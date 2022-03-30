@@ -1,28 +1,12 @@
 import { useEffect, useState } from "react";
-
-const famousQuotes = {
-  0: "Make time to enjoy the simple things in life",
-  1: "Doing what you like is freedom. Liking what you do is happiness.",
-  2: "Be happy with what you have. Be excited about what you want",
-  3: "Fall in Love with the process of becoming the very best version of yourself",
-  4: "Do not be shy to give credits to your fellow programmer if they helped you",
-  5: "You must find the courage to leave the table if respect is no longer served",
-  6: "Strong people do not put others down they lift them up",
-  7: "Become the kind of leader that people would follow voluntarily even if you had no title or position",
-  8: "Give yourself enough respect to walk away from someone who does not see your worth",
-  9: "You lose a lot af friends when you get serious about your future and goals",
-  10: "A bug a day, keeps the developer inside you awake",
-  11: "Hapiness starts with you not with your relationships, not with your job, not with your money, but with you.",
-  12: "You do not inspire others by showing them how amazing you are. You inspire them by showing them how amazing they are",
-  13: "New energy is entering your life. Changes are happening for you. Things are getting better. Everything is aligning. Belssings are coming.",
-};
+import famousQuotes from "../data/quotes";
 
 const Focus = () => {
   let [focus, setFocus] = useState("");
   let [temperature, setTemperature] = useState("");
   let [weatherIcon, setWeatherIcon] = useState("");
   let [weatherStatus, setWeatherStatus] = useState("");
-  let [time, setTime] = useState("");
+  let [currentTime, setCurrentTime] = useState("");
   let [greeting, setGreeting] = useState("");
   let [displayStatus, setDisplayStatus] = useState("active");
   let [focusUpdate, setFocusUpdate] = useState("");
@@ -51,47 +35,50 @@ const Focus = () => {
     updateWeatherStatus(temperature);
   };
 
-  const getTime = () => {
-    const date = new Date();
-    let time = date.toLocaleTimeString();
-    time = time.slice(0, 5) + time.slice(8);
-    setTime(time);
-  };
-
-  const getGreeting = () => {
+  const getGreeting = (ctime) => {
     const userName = localStorage.getItem("user-name");
 
-    if (time.slice(6, 8) === "AM") {
+    if (ctime.includes("AM")) {
       setGreeting("Good Morning " + userName);
-    } else {
-      let hours = time.slice(0, 2);
-      let noon = ["12", "01", "02", "03", "04", "05"];
-      if (hours in noon) setGreeting("Good Afternoon");
+    } else if (ctime.includes("PM")) {
+      let hours = ctime.slice(0, 2).trim().replace(/:$/g, "");
+      let noon = ["12", "01", "02", "03", "04", "05", "1", "2", "3", "4", "5"];
+
+      if (noon.includes(hours)) setGreeting("Good Afternoon " + userName);
       else setGreeting("Good Evening " + userName);
     }
   };
 
+  const getTime = () => {
+    const date = new Date();
+    let time = date.toLocaleTimeString().split(":");
+    let ctime = time[0] + ":" + time[1] + " " + time[2].slice(-2);
+    setCurrentTime(ctime);
+    getGreeting(ctime);
+  };
+
   const handleChange = (event) => {
+    let taskName = "",
+      formatedTask = "";
     if (event.key === "Enter") {
-      setFocus(event.target.value);
+      taskName = event.target.value.toLowerCase();
+      formatedTask = taskName[0].toUpperCase() + taskName.slice(1);
+      setFocus(formatedTask);
       setDisplayStatus("inactive");
     }
   };
 
   const getRandomQuote = () => {
-    const randomNumber = Math.floor(Math.random() * 13 + 1);
+    const randomNumber = Math.floor(Math.random() * 13) + 1;
     setQuote(famousQuotes[randomNumber]);
   };
 
   useEffect(() => {
     getTemperature();
     getTime();
-    getGreeting();
     getRandomQuote();
+    setInterval(getTime, 60000);
   }, []);
-
-  setInterval(getTime, 60000);
-  setInterval(getGreeting, 60 * 60000);
 
   return (
     <div className="focus-container">
@@ -106,7 +93,7 @@ const Focus = () => {
         <p className="weather-state">{weatherStatus}</p>
       </nav>
       <main className="focus-body">
-        <time className="time">{time}</time>
+        <time className="time">{currentTime}</time>
         <p className="greeting">{greeting}</p>
         <div className="focus-wrapper">
           <label className="focus-label">
@@ -128,6 +115,7 @@ const Focus = () => {
                     ? setFocusUpdate("text-strike")
                     : setFocusUpdate("")
                 }
+                required
               ></input>
               <label className={`focus-taskName ${focusUpdate}`}>{focus}</label>
             </div>

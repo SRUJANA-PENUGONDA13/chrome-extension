@@ -9,13 +9,27 @@
   --primary--color: #ffffff;
 }
 
+/* Media Queries */
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 12px;
+  }
+  .quote {
+    font-size: var(--text--medium);
+  }
+
+  .focus-container {
+    gap: 8rem;
+  }
+}
+
 .bottom-border-input {
   border: none;
   outline: none;
   border-bottom: 3px solid var(--primary--color);
   color: var(--primary--color);
   width: 100%;
-  padding: 10px;
   text-align: center;
 }
 
