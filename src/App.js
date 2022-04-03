@@ -13,8 +13,7 @@ function App() {
   const window = useWindowDimensions();
 
   useEffect(() => {
-    const randomNumber = Math.floor(Math.random() * 63) + 1;
-    console.log(imageIds[randomNumber]);
+    const randomNumber = Math.floor(Math.random() * 65) + 1;
     let URL =
       "https://picsum.photos/id/" +
       imageIds[randomNumber] +
