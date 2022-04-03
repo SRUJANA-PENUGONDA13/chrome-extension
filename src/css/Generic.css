@@ -1,0 +1,46 @@
+:root {
+  --text--xsmall: 1rem;
+  --text--small: 1.25rem;
+  --text--medium: 2rem;
+  --text--large: 2.5rem;
+  --text--xlarge: 3rem;
+  --text--xxlarge: 5rem;
+  --text--xxxlarge: 7rem;
+  --primary--color: #ffffff;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 12px;
+  }
+  .quote {
+    font-size: var(--text--medium);
+  }
+
+  .focus-container {
+    gap: 8rem;
+  }
+}
+
+.bottom-border-input {
+  border: none;
+  outline: none;
+  border-bottom: 3px solid var(--primary--color);
+  color: var(--primary--color);
+  width: 100%;
+  text-align: center;
+}
+
+.active {
+  display: block;
+}
+
+.inactive {
+  display: none;
+}
+
+.text-strike {
+  text-decoration: line-through;
+}

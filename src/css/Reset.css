@@ -1,0 +1,15 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  color: var(--primary--color);
+  letter-spacing: 0.9px;
+}
+
+input,
+textarea {
+  background: 0 0;
+}
+
+p {
+  margin: 0px;
+}
