@@ -1,29 +1,29 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import useWindowDimensions from "../src/customHooks/windowDimensions";
 import Home from "./components/Home";
 import Focus from "./components/Focus";
+import imageIds from "./data/imageIds";
 import "./css/App.css";
 import "./css/Reset.css";
 import "./css/Generic.css";
 
 function App() {
   const [imageURL, setImageURL] = useState();
-  const [windowWidth, setWindowWidth] = useState("");
-  const [windowHeight, setWindowHeight] = useState("");
+  const window = useWindowDimensions();
 
   useEffect(() => {
-    getWindowDimensions();
-    let URL = "https://picsum.photos/" + windowWidth + "/" + windowHeight;
+    const randomNumber = Math.floor(Math.random() * 63) + 1;
+    console.log(imageIds[randomNumber]);
+    let URL =
+      "https://picsum.photos/id/" +
+      imageIds[randomNumber] +
+      "/" +
+      window.width +
+      "/" +
+      window.height;
     setImageURL(URL);
-  }, [windowWidth, windowHeight]);
-
-  const getWindowDimensions = () => {
-    const hasWindow = typeof window !== "undefined";
-    const width = hasWindow ? window.innerWidth : null;
-    const height = hasWindow ? window.innerHeight : null;
-    setWindowWidth(width.toString());
-    setWindowHeight(height.toString());
-  };
+  }, [window.height, window.width]);
 
   const scenery = {
     backgroundImage: `url(${imageURL})`,
