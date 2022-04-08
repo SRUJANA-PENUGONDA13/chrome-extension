@@ -50,6 +50,7 @@
   align-items: center;
   margin: auto;
   margin-right: 0px;
+  line-height: 10px;
   font-size: var(--text-medium);
 }
 
@@ -57,17 +58,16 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
-  font-size: var(--text--large);
+  font-size: var(--text--xlarge);
 }
 
 .temp-measure {
-  font-size: var(--text--small);
+  font-size: var(--text--large);
 }
 
-.weather-state {
+.location {
   text-align: right;
-  font-size: var(--text--small);
+  font-size: var(--text--medium);
 }
 
 .weather-icon {
@@ -79,7 +79,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .time {

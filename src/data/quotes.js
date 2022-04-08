@@ -8,7 +8,7 @@ const famousQuotes = {
   6: "Strong people do not put others down they lift them up",
   7: "Become the kind of leader that people would follow voluntarily even if you had no title or position",
   8: "Give yourself enough respect to walk away from someone who does not see your worth",
-  9: "You lose a lot af friends when you get serious about your future and goals",
+  9: "You lose a lot of friends when you get serious about your future and goals",
   10: "A bug a day, keeps the developer inside you awake",
   11: "Hapiness starts with you not with your relationships, not with your job, not with your money, but with you.",
   12: "You do not inspire others by showing them how amazing you are. You inspire them by showing them how amazing they are",

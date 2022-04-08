@@ -12,12 +12,6 @@ export function focusReducer(state, action) {
     case "UPDATE_QUOTE":
       return { ...state, quote: action.payload };
 
-    case "UPDATE_WEATHER":
-      return { ...state, weather: action.payload };
-
-    case "UPDATE_TEMPERATURE":
-      return { ...state, temperature: action.payload };
-
     case "UPDATE_TIME":
       return { ...state, currentTime: action.payload };
 
