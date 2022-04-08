@@ -14,7 +14,7 @@ function App() {
   const windowdimensions = useWindowDimensions();
 
   useEffect(() => {
-    const randomNumber = Math.floor(Math.random() * 57) + 1;
+    const randomNumber = Math.floor(Math.random() * 30) + 1;
     let URL =
       "https://picsum.photos/id/" +
       imageIds[randomNumber] +

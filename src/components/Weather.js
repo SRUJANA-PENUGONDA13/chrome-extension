@@ -51,6 +51,7 @@ const Weather = () => {
     <React.Fragment>
       <div className="temperature">
         <img
+          className="weatherIcon"
           src={`https://openweathermap.org/img/wn/${state.weatherIcon}@2x.png`}
         />
         <p>
