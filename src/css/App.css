@@ -55,23 +55,23 @@
 }
 
 .weatherIcon {
-  height: 80px;
-  width: 80px;
+  height: 5rem;
+  width: 5rem;
 }
 .temperature {
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-size: var(--text--large);
+  font-size: var(--text--medium);
 }
 
 .temp-measure {
-  font-size: var(--text--medium);
+  font-size: var(--text--small);
 }
 
 .location {
   text-align: right;
-  font-size: var(--text--medium);
+  font-size: var(--text--small);
 }
 
 .weather-icon {
@@ -109,7 +109,7 @@
 }
 
 .focus-task {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .focus-taskName {

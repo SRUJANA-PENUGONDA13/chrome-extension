@@ -27,7 +27,7 @@ const Weather = () => {
         dispatch({ type: "SET_WEATHER_ICON", payload: weather[0].icon });
       }
     } catch (error) {
-      console.log("Error: ", error);
+      console.error("Error: ", error);
     }
   };
 
@@ -41,7 +41,7 @@ const Weather = () => {
           getWeatherData(latitude, longitude);
         },
         (error) => {
-          console.log("Error: ", error);
+          console.error("Error: ", error);
         }
       );
     }

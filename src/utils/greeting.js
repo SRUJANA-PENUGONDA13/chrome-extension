@@ -1,18 +1,10 @@
-const getGreeting = (ctime) => {
+const getGreeting = (time) => {
   const userName = localStorage.getItem("user-name");
   let greeting = "";
-  if (ctime !== "" && ctime !== undefined) {
-    let hours = ctime.slice(0, 2).trim().replace(/:$/g, "");
-    let noon = ["12", "01", "02", "03", "04", "05", "1", "2", "3", "4", "5"];
-    if (ctime.includes("AM")) {
-      greeting = "Good Morning " + userName;
-    } else if (ctime.includes("PM")) {
-      if (noon.includes(hours)) {
-        greeting = "Good Afternoon " + userName;
-      } else {
-        greeting = "Good Evening " + userName;
-      }
-    }
+  if (time.toString().includes("AM")) {
+    greeting = "Good Morning " + userName;
+  } else {
+    greeting = "Good Afternoon " + userName;
   }
 
   return greeting;
