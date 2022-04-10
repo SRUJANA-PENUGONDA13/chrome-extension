@@ -1,8 +1,12 @@
 const getTime = () => {
   const date = new Date();
-  let time = date.toLocaleTimeString().split(":");
-  let ctime = time[0] + ":" + time[1] + " " + time[2].slice(-2);
-  return ctime;
+  var options = {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  };
+  const time = date.toLocaleTimeString("en-US", options);
+  return time;
 };
 
 export default getTime;

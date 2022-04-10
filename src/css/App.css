@@ -36,7 +36,7 @@
 }
 
 .focus-container {
-  padding: 2rem;
+  padding: 0.3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,22 +50,26 @@
   align-items: center;
   margin: auto;
   margin-right: 0px;
+  line-height: 10px;
   font-size: var(--text-medium);
 }
 
+.weatherIcon {
+  height: 5rem;
+  width: 5rem;
+}
 .temperature {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
-  font-size: var(--text--large);
+  font-size: var(--text--medium);
 }
 
 .temp-measure {
   font-size: var(--text--small);
 }
 
-.weather-state {
+.location {
   text-align: right;
   font-size: var(--text--small);
 }
@@ -79,7 +83,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .time {
@@ -105,7 +109,7 @@
 }
 
 .focus-task {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .focus-taskName {

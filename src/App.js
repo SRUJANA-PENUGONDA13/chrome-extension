@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import useWindowDimensions from "../src/customHooks/windowDimensions";
 import Home from "./components/Home";
 import Focus from "./components/Focus";
@@ -10,19 +9,26 @@ import "./css/Generic.css";
 
 function App() {
   const [imageURL, setImageURL] = useState();
-  const window = useWindowDimensions();
+  const [userName, setUserName] = useState(null);
+
+  const windowdimensions = useWindowDimensions();
 
   useEffect(() => {
-    const randomNumber = Math.floor(Math.random() * 65) + 1;
+    const randomNumber = Math.floor(Math.random() * 30) + 1;
     let URL =
       "https://picsum.photos/id/" +
       imageIds[randomNumber] +
       "/" +
-      window.width +
+      windowdimensions.width +
       "/" +
-      window.height;
+      windowdimensions.height;
     setImageURL(URL);
-  }, [window.height, window.width]);
+    setUserName(localStorage.getItem("user-name"));
+  }, [windowdimensions.height, windowdimensions.width]);
+
+  useEffect(() => {
+    setUserName(localStorage.getItem("user-name"));
+  }, []);
 
   const scenery = {
     backgroundImage: `url(${imageURL})`,
@@ -30,12 +36,7 @@ function App() {
 
   return (
     <div style={scenery} className="main-container">
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/focus" element={<Focus />}></Route>
-        </Routes>
-      </Router>
+      {userName === null ? <Home /> : <Focus />}
     </div>
   );
 }
