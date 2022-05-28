@@ -31,7 +31,7 @@ const Weather = () => {
     }
   };
 
-  useEffect(() => {
+  const getWeatherCordinatesAndData = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
@@ -45,6 +45,10 @@ const Weather = () => {
         }
       );
     }
+  };
+  useEffect(() => {
+    getWeatherCordinatesAndData();
+    setInterval(getWeatherCordinatesAndData, 60000);
   }, []);
 
   return (

@@ -6,6 +6,7 @@ const getTime = () => {
     hour12: true,
   };
   const time = date.toLocaleTimeString("en-US", options);
+
   return time;
 };
 

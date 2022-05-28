@@ -14,7 +14,12 @@ const TimeAndGreeting = () => {
 
   useEffect(() => {
     setTimeAndGreeting();
-    setInterval(setTimeAndGreeting, 60000);
+    const date = new Date();
+    const seconds = date.toLocaleTimeString("en-US", {
+      second: "numeric",
+      hour12: true,
+    });
+    setInterval(setTimeAndGreeting, 60000 - seconds ? seconds : 0 * 1000);
   }, []);
 
   return (
