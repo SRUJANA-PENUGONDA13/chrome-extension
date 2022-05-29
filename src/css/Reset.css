@@ -3,6 +3,7 @@ body {
   padding: 0px;
   color: var(--primary--color);
   letter-spacing: 0.9px;
+  font-family: "Times New Roman", Times, serif;
 }
 
 input,

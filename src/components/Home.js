@@ -16,7 +16,11 @@ const Home = () => {
           className="bottom-border-input name-input"
           type="text"
           autoComplete="off"
-          onChange={(event) => setUserName(event.target.value)}
+          onKeyPress={(event) =>
+            event.key === "Enter"
+              ? handleClick()
+              : setUserName(event.target.value)
+          }
         ></input>
       </div>
       <button role="button" className="continue-btn" onClick={handleClick}>
