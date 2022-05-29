@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 const Home = () => {
   let [userName, setUserName] = useState("");
 
-  const handleClick = () => {
-    localStorage.setItem("user-name", userName);
+  const handleClick = (name) => {
+    localStorage.setItem("user-name", name);
     window.location.reload(false);
   };
 
@@ -16,14 +16,18 @@ const Home = () => {
           className="bottom-border-input name-input"
           type="text"
           autoComplete="off"
-          onKeyPress={(event) =>
+          onKeyUp={(event) =>
             event.key === "Enter"
-              ? handleClick()
+              ? handleClick(event.target.value)
               : setUserName(event.target.value)
           }
         ></input>
       </div>
-      <button role="button" className="continue-btn" onClick={handleClick}>
+      <button
+        role="button"
+        className="continue-btn"
+        onClick={() => handleClick(userName)}
+      >
         Continue
       </button>
     </div>
