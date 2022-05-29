@@ -19,7 +19,7 @@ const TimeAndGreeting = () => {
       second: "numeric",
       hour12: true,
     });
-    setInterval(setTimeAndGreeting, 60000 - seconds ? seconds : 0 * 1000);
+    setInterval(setTimeAndGreeting, 60000 - (seconds ? seconds : 0) * 1000);
   }, []);
 
   return (
