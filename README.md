@@ -31,6 +31,8 @@ To run this project locally, write on your CLI:
 ```bash
   git clone "https://github.com/SRUJANA-PENUGONDA13/chrome-extension"
 ```
+## Change Log
+07/06/2022 - Fixed Weather Sync Issue, updated typography (font-family) of app and added enter funtionality to navigate to user onboarding page from home page
 
 ## Demo
 
